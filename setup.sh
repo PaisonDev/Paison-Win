@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DISTRO=$(lsb_release -a 2>/dev/null)
+DISTRO=$(cat /etc/*-release 2>/dev/null)
 if [ $(echo $DISTRO | grep -i "CentOs" | wc -l) -eq 1 ]; then
         yum install httpd -y
         yum install python gcc screen -y
