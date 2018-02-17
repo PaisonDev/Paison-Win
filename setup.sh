@@ -3,35 +3,35 @@
 echo "Detecting Operating System For Package Installations"
 DISTRO=$(cat /etc/*-release 2>/dev/null)
 if [ $(echo $DISTRO | grep -i "CentOs" | wc -l) -eq 1 ]; then
-        yum install httpd -y 2>/dev/null
-        yum install python gcc screen -y 2>/dev/null 
-        sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT 2>/dev/null
-        sudo service iptables save 2>/dev/null
-        sudo yum install php php-mysql php-devel php-gd php-pecl-memcache php-pspell php-snmp php-xmlrpc php-xml -y 2>/dev/null
-        sudo service httpd restart 2>/dev/null
-        yum install python-setuptools -y 2>/dev/null 
-        curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" 2>/dev/null
-        python get-pip.py 2>/dev/null 
-        pip install ipgetter 2>/dev/null
+        yum install httpd -y >/dev/null 2>&1
+        yum install python gcc screen -y >/dev/null 2>&1
+        sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT >/dev/null 2>&1
+        sudo service iptables save >/dev/null 2>&1
+        sudo yum install php php-mysql php-devel php-gd php-pecl-memcache php-pspell php-snmp php-xmlrpc php-xml -y >/dev/null 2>&1
+        sudo service httpd restart >/dev/null 2>&1
+        yum install python-setuptools -y >/dev/null 2>&1
+        curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" >/dev/null 2>&1
+        python get-pip.py >/dev/null 2>&1
+        pip install ipgetter >/dev/null 2>&1
 
 
 elif [ $(echo $DISTRO | grep -i "Debian" | wc -l) -eq 1 ]; then
-        apt-get install php libapache2-mod-php php-mcrypt php-mysql -y 2>/dev/null
-        apt-get install apache2 -y 2>/dev/null
-        apt-get install python gcc screen -y 2>/dev/null
-        sudo service apache2 restart 2>/dev/null
-        apt-get install python-setuptools -y 2>/dev/null
-        apt-get install python-pip -y 2>/dev/null
-        pip install ipgetter 2>/dev/null
+        apt-get install php libapache2-mod-php php-mcrypt php-mysql -y >/dev/null 2>&1
+        apt-get install apache2 -y >/dev/null 2>&1
+        apt-get install python gcc screen -y >/dev/null 2>&1
+        sudo service apache2 restart >/dev/null 2>&1
+        apt-get install python-setuptools -y >/dev/null 2>&1
+        apt-get install python-pip -y >/dev/null 2>&1
+        pip install ipgetter >/dev/null 2>&1
 
 elif [ $(echo $DISTRO | grep -i "Ubuntu" | wc -l) -eq 1 ]; then
-        apt-get install php libapache2-mod-php php-mcrypt php-mysql -y 2>/dev/null 
-        apt-get install apache2 -y 2>/dev/null
-        apt-get install python gcc screen -y 2>/dev/null
-        sudo service apache2 restart 2>/dev/null
-        apt-get install python-setuptools -y 2>/dev/null
-        apt-get install python-pip -y 2>/dev/null
-        pip install ipgetter 2>/dev/null
+        apt-get install php libapache2-mod-php php-mcrypt php-mysql -y >/dev/null 2>&1
+        apt-get install apache2 -y >/dev/null 2>&1
+        apt-get install python gcc screen -y >/dev/null 2>&1
+        sudo service apache2 restart >/dev/null 2>&1
+        apt-get install python-setuptools -y >/dev/null 2>&1
+        apt-get install python-pip -y >/dev/null 2>&1
+        pip install ipgetter >/dev/null 2>&1
         
 else
         echo "Unknown OS"
