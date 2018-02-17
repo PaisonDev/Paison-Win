@@ -8,8 +8,11 @@ if [ $(echo $DISTRO | grep -i "CentOs" | wc -l) -eq 1 ]; then
         sudo service iptables save
         sudo yum install php php-mysql php-devel php-gd php-pecl-memcache php-pspell php-snmp php-xmlrpc php-xml
         sudo service httpd restart
-        yum install python-pip -y
         yum install python-setuptools -y
+        curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+        python get-pip.py
+        pip install ipgetter
+
 
 elif [ $(echo $DISTRO | grep -i "Debian" | wc -l) -eq 1 ]; then
         apt-get install php libapache2-mod-php php-mcrypt php-mysql -y
