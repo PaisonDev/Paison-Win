@@ -1,2 +1,7 @@
-# Paison-Win
-PaisonBot Windows Development
+# Requirements
+
+Python:
+    requests, parallel-ssh, ipgetter
+    
+Linux:
+    gcc, screen
