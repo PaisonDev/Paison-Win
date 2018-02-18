@@ -1,6 +1,7 @@
 # Requirements
 
 Python:
+    ** No Need to run manually, Run setup.sh*
     requests, parallel-ssh, ipgetter
     
 Linux:
