@@ -65,13 +65,10 @@ echo "ip = ipgetter.myip()" >> /var/www/html/send.py
 echo "url = sys.argv[1]" >> /var/www/html/send.py
 echo "reqs = sys.argv[2]" >> /var/www/html/send.py
 echo "wait_time = sys.argv[3]" >> /var/www/html/send.py
-echo "count = 0" >> /var/www/html/send.py
 echo "while True:" >> /var/www/html/send.py
-echo "    count += 1" >> /var/www/html/send.py
-echo "    os.system(\"wget http://%s/url.php?url=%s >/dev/null 2>&1\" % (ip, url))" >> /var/www/html/send.py
-echo "    os.system(\"rm -rf url.php?*\")" >> /var/www/html/send.py
-echo "    sys.stdout.write(\"Sent: {} Requests\".format(count))" >> /var/www/html/send.py
-echo "    os.system('clear')" >> /var/www/html/send.py
+echo "    if (reqs == 0):" >> /var/www/html/send.py
+echo "        sys.exit(\"Done\")" >> /var/www/html/send.py
+echo "    os.system(\"wget http://%s/url.php?url=%s -O /dev/null >/dev/null 2>^1\" % (ip, url))" >> /var/www/html/send.py
+echo "    print(\"Request Left: {}\".format(reqs))" >> /var/www/html/send.py
 echo "    time.sleep(int(wait_time))" >> /var/www/html/send.py
-echo "    if (count == reqs):" >> /var/www/html/send.py
-echo "        break" >> /var/www/html/send.py
+echo "    reqs -= 1" >> /var/www/html/send.py
