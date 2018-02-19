@@ -25,3 +25,14 @@ Run Setup.sh
 -- chmod +x setup.sh; ./setup.sh
 
 __NOTE__: To change default password: nano/vi into Paison-Win-master/setup.sh, and change the text insde line > 58
+
+Woallah! You're Parallel SSH CNC Server is now setup
+
+
+## How do I connect?!
+Either use putty, Or wait until the custom client is posted.
+
+
+## Commands
+*-help*
+    -- Shows All Commands (With Arguments)
