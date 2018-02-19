@@ -14,7 +14,7 @@ gcc screen php php-mysql php-devel php-gd php-pecl-memcache php-pspell php-snmp 
 ## Installation
 Download / Clone Source, Unzip the File.
 
--- unzip Paison-Win-master.zip
+-- apt/yum install unzip -y; unzip master.zip
 
 Change your current directory after unzipping.
 
