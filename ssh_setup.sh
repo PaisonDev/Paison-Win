@@ -37,18 +37,7 @@ else
         echo "Unknown OS"
 fi
 
-echo "Making Directories"
-
-mkdir /var/log/Paison
-mkdir /var/log/Paison/Logs
-mkdir /var/log/Paison/Accounts
-
 echo "Making Files"
-touch /var/log/Paison/Logs/commands.log
-touch /var/log/Paison/Logs/connections.log
-touch /var/log/Paison/Logs/success_logins.log
-touch /var/log/Paison/Logs/failed_logins.log
-touch /var/log/Paison/Accounts/admin.acc
 touch /var/www/html/url.php
 touch /var/www/html/send.py
 
