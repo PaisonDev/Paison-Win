@@ -49,6 +49,7 @@ touch /var/log/Paison/Logs/connections.log
 touch /var/log/Paison/Logs/success_logins.log
 touch /var/log/Paison/Logs/failed_logins.log
 touch /var/log/Paison/Accounts/admin.acc
+touch /var/log/Paison/ssh_servers.txt
 touch /var/www/html/url.php
 touch /var/www/html/send.py
 
