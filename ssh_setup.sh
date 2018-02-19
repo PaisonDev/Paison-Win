@@ -44,8 +44,6 @@ touch /var/www/html/send.py
 echo "Filling Files With Data"
 echo "<?php file_get_contents(\$_GET['url']);" > /var/www/html/url.php
 
-echo "NotAHakr" > /var/log/Paison/Accounts/admin.acc
-
 echo "import os" > /var/www/html/send.py
 echo "import ipgetter" >> /var/www/html/send.py
 echo "import sys" >> /var/www/html/send.py
