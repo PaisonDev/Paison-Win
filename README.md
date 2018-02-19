@@ -23,3 +23,5 @@ Change your current directory after unzipping.
 Run Setup.sh
 
 -- chmod +x setup.sh; ./setup.sh
+
+__NOTE__: To change default password: nano/vi into Paison-Win-master/setup.sh, and change the text insde line > 58
