@@ -63,7 +63,7 @@ echo "import sys" >> /var/www/html/send.py
 echo "import time" >> /var/www/html/send.py
 echo "ip = ipgetter.myip()" >> /var/www/html/send.py
 echo "url = sys.argv[1]" >> /var/www/html/send.py
-echo "reqs = sys.argv[2]" >> /var/www/html/send.py
+echo "reqs = int(sys.argv[2])" >> /var/www/html/send.py
 echo "wait_time = sys.argv[3]" >> /var/www/html/send.py
 echo "while True:" >> /var/www/html/send.py
 echo "    if (reqs == 0):" >> /var/www/html/send.py
