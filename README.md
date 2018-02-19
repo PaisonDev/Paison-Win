@@ -36,3 +36,11 @@ Either use putty, Or wait until the custom client is posted.
 ## Commands
 *-help*
     -- Shows All Commands (With Arguments)
+    
+## How Do I Get Servers?!
+nano/vi into the ssh_servers file
+    -- nano /var/log/Paison/ssh_servers.txt
+
+Add a new line for every ssh server.
+__NOTE__: passwd every ssh server to a static password.
+
