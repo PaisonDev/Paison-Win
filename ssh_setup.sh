@@ -13,6 +13,8 @@ if [ $(echo $DISTRO | grep -i "CentOs" | wc -l) -eq 1 ]; then
         curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
         python get-pip.py
         pip install ipgetter
+        pip install paralell-ssh
+        pip install pxssh
 
 
 elif [ $(echo $DISTRO | grep -i "Debian" | wc -l) -eq 1 ]; then
@@ -23,7 +25,9 @@ elif [ $(echo $DISTRO | grep -i "Debian" | wc -l) -eq 1 ]; then
         apt-get install python-setuptools -y 
         apt-get install python-pip -y 
         pip install ipgetter 
-
+        pip install paralell-ssh
+        pip install pxssh
+        
 elif [ $(echo $DISTRO | grep -i "Ubuntu" | wc -l) -eq 1 ]; then
         apt-get install php libapache2-mod-php php-mcrypt php-mysql -y
         apt-get install apache2 -y 
@@ -32,6 +36,8 @@ elif [ $(echo $DISTRO | grep -i "Ubuntu" | wc -l) -eq 1 ]; then
         apt-get install python-setuptools -y 
         apt-get install python-pip -y 
         pip install ipgetter
+        pip install paralell-ssh
+        pip install pxssh
         
 else
         echo "Unknown OS"
