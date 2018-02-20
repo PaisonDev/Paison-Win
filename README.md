@@ -13,4 +13,5 @@ PaisonBot has no intent to be malicious, or classed as malware.
 
 #### Pastebin Viewbot
 `-pbin http://pastebin.com/u/<PROF_NAME> <AMOUNT_OF_VIEWS> <INTRVL>`
-__Example__: `-pbin http://pastebin.com/u/aex- 100 0`
+ 
+ __Example__: `-pbin http://pastebin.com/u/aex- 100 0`
