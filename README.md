@@ -2,9 +2,9 @@
 PaisonBot has no intent to be malicious, or classed as malware.
 
 ## Commands
-`-help`
+`-help`*Displays Help Output*
 
-`-logout` *Displays Help Output*
+`-logout` *Closes TCP Connection to the server.*
 
 `-clear` *Clears Console Screen*
 
