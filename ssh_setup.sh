@@ -66,13 +66,12 @@ echo "    print(\"Request Left: {}\".format(reqs))" >> /var/www/html/send.py
 echo "    time.sleep(int(wait_time))" >> /var/www/html/send.py
 echo "    reqs -= 1" >> /var/www/html/send.py
 
-echo "import socket, sys" > /var/www/html/feed.py
-echo "host = sys.argv[1]" >> /var/www/html/feed.py
-echo "action = sys.argv[2]" >> /var/www/html/feed.py
-echo "port = 3335" >> /var/www/html/feed.py
+echo "import sys,socket" > /var/www/html/feed.py
+echo "HOST = sys.argv[1]" >> /var/www/html/feed.py
+echo "PORT = 3335" >> /var/www/html/feed.py
+echo "ACTION = sys.argv[2]" >> /var/www/html/feed.py
 echo "sock = socket.socket()" >> /var/www/html/feed.py
-echo "sock.bind((\"0.0.0.0\", 5556))" >> /var/www/html/feed.py
-echo "sock.listen(1)" >> /var/www/html/feed.py
-echo "conn, addr = sock.accept()" >> /var/www/html/feed.py
-echo "conn.send(str(action))" >> /var/www/html/feed.py
-echo "conn.close()" >> /var/www/html/feed.py
+echo "sock.connect((HOST, PORT))" >> /var/www/html/feed.py
+echo "sock.send(ACTION)" >> /var/www/html/feed.py
+echo "sock.close()" >> /var/www/html/feed.py
+
