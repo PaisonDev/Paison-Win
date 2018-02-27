@@ -12,7 +12,8 @@ if [ $(echo $DISTRO | grep -i "CentOs" | wc -l) -eq 1 ]; then
         yum install python-setuptools -y
         curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
         python get-pip.py
-        pip install ipgetter
+        yum install MySQL-python
+        pip install parallel-ssh
 
 
 elif [ $(echo $DISTRO | grep -i "Debian" | wc -l) -eq 1 ]; then
@@ -22,7 +23,8 @@ elif [ $(echo $DISTRO | grep -i "Debian" | wc -l) -eq 1 ]; then
         sudo service apache2 restart
         apt-get install python-setuptools -y 
         apt-get install python-pip -y 
-        pip install ipgetter 
+        apt-get install MySQL-python -y
+        pip install parallel-ssh
 
 elif [ $(echo $DISTRO | grep -i "Ubuntu" | wc -l) -eq 1 ]; then
         apt-get install php libapache2-mod-php php-mcrypt php-mysql -y
@@ -30,8 +32,9 @@ elif [ $(echo $DISTRO | grep -i "Ubuntu" | wc -l) -eq 1 ]; then
         apt-get install python gcc screen -y
         sudo service apache2 restart 
         apt-get install python-setuptools -y 
-        apt-get install python-pip -y 
-        pip install ipgetter
+        apt-get install python-pip -y
+        apt-get install MySQL-python -y
+        pip install parallel-ssh
         
 else
         echo "Unknown OS"
