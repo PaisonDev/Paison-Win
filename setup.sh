@@ -49,3 +49,6 @@ mkdir /var/log/Paison/Accounts
 echo "Making Files"
 touch /var/log/Paison/ssh_servers.txt
 touch /var/log/Paison/banner.txt
+touch /var/log/Paison/Logs/device_feedback.log
+
+
